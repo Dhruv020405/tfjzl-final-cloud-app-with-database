@@ -22,3 +22,9 @@ class Enrollment(models.Model):
 class Submission(models.Model):
     enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
     choices = models.ManyToManyField(Choice)
+
+class Instructor(models.Model):
+    name = models.CharField(max_length=100)
+
+class Learner(models.Model):
+    name = models.CharField(max_length=100)

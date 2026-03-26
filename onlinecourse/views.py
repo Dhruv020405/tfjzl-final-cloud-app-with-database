@@ -14,11 +14,11 @@ def show_exam_result(request, submission_id):
     submission = Submission.objects.get(id=submission_id)
     
     selected_choices = submission.choices.all()
-    score = selected_choices.count()
+    score = submission.choices.count()
 
     context = {
         'score': score,
         'choices': selected_choices
     }
 
-    return render(request, 'result.html', context)
+    return render(request, 'onlinecourse/result.html', context)
